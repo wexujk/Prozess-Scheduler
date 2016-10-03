@@ -48,6 +48,10 @@ public class Prozess
 		zeit_ex_proceso=neueTam;		
 	}
 
+	public int GetPrioridad(){
+		return vorzug;
+	}
+
 
     }
 
