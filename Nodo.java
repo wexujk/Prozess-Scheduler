@@ -1,29 +1,30 @@
 
-
-public class Nodo{
+class Nodo{
 	private Prozess info;
-	private Nodo ligaDer;
-
-	//Constructor
-	public Nodo(Prozess dato, Nodo ld){
-		info= dato;
-		ligaDer= ld;
+	private Nodo sig;
+   
+	public Nodo(Prozess info, Nodo sig){
+			this.info=info;
+			this.sig=sig;
 	}
 
-	//Metodos
-	public void SetInfo(Prozess dato){
-		info= dato;
+	public void SetInfo(Prozess dato)
+	{
+		info = dato;
 	}
 
-	public void SetLigaDer(Nodo ld){
-		ligaDer= ld;
+	public void SetSig(Nodo sig)
+	{
+		this.sig=sig;
 	}
 
-	public String GetInfo(){
+	public Prozess GetInfo()
+	{
 		return info;
 	}
 
-	public Nodo GetLigaDer(){
-		return ligaDer;
+	public Nodo GetSig()
+	{
+		return sig;
 	}
 }
