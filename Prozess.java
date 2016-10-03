@@ -3,7 +3,7 @@ public class Prozess
 	private  String idproceso, nomproceso;
 	private  int tamproceso,zeit_ex_proceso,vorzug, ankommenzeit=0;
 	
-	//private  Random  r = new Random();
+	//private  Random  r = new Rsandom();
 	
 
 	public void CapturaDatos()
@@ -13,8 +13,13 @@ public class Prozess
 		do{
 			tamproceso=Teclado.LeeEntero("Ingrese el tamaño del proceso "+nomproceso+" : ");
 		}while(Valida_Tamproceso());
+		do{
+			zeit_ex_proceso=Teclado.LeeEntero("Ingrese el tiempo de ejecucion: ");
+		}while(ValidaTiempoejecucion());
+		do{
+			vorzug=Teclado.LeeEntero("Ingrese la prioridad del proceso "+nomproceso+" : ");
+		}while(ValidaPrioridad());
 		
-		vorzug=Teclado.LeeEntero("Ingrese la prioridad del proceso "+nomproceso+" : ");
 	}
 
 //Métodos de validaciones para  los datos  ingresados ingresados
@@ -32,6 +37,29 @@ public class Prozess
             		}
           return false;
     }
+    public boolean ValidaTiempoejecucion()
+	{
+			if(zeit_ex_proceso < 1 ){
+            	System.out.println("EL tiempo minimo es 1 mseg  =/  ingrese un nuevo  tiempo ");
+            			return true;
+            		}
+   
+          return false;
+    }
+    public boolean ValidaPrioridad()
+	{
+			if(vorzug < 0){
+            	System.out.println("Error en prioridad, ingrese una prioridad del 0 a 5.  ");
+            			return true;
+            		}
+
+            if(vorzug > 5){
+            	System.out.println("Error en prioridad, ingrese una prioridad del 0 a 5.  ");
+            			return true;
+            }
+   
+          return false;
+    }
 
     public void Listar(){
 
@@ -42,14 +70,14 @@ public class Prozess
     	System.out.println("Prioridad: "+ vorzug);
     }
 
-    public void Actualizar(int neueTam)
-    {
-
-		zeit_ex_proceso=neueTam;		
-	}
+    
 
 	public int GetPrioridad(){
 		return vorzug;
+	}
+
+	public int GetRafaga(){
+		return zeit_ex_proceso;
 	}
 
 

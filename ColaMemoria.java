@@ -3,6 +3,7 @@ public class ColaMemoria
     private Prozess []cola;
     private int h;
     private int t;
+    private int tamaño=100;
 
     public ColaMemoria()
     {

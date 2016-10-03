@@ -50,8 +50,8 @@ class ProcesosListos{
         return actual;
     }
 
-    public void Ordnen(){
-        
+    public Nodo GetH(){
+        return H;
     }
 
 }

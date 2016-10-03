@@ -14,7 +14,11 @@ public class Planificador{
 			colaprocesoslistos.Insertar(p);
 	}
 
-	public void Spiel(){
-		m
+	public void Run(){
+
+		or.Sortieren(colaprocesoslistos.GetH());
+		do{
+			
+		}
 	}
 }

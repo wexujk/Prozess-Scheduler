@@ -4,6 +4,8 @@ public class Prueba{
 		
 		Prozess p1 = new Prozess();
 		p1.CapturaDatos();
-		p1.DruckProzess();
+		p1.Listar();
+      
+     
 	}
 }
