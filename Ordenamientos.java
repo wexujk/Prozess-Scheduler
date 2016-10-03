@@ -6,7 +6,7 @@ class Ordenamientos
   	    j.SetInfo(aux);
       }
       
-      public static void SortIntercambio(Nodo H){
+      public static void Sortieren(Nodo H){
     	 Nodo i, j;
     	  for(i=H;i.GetSig()!=null;i=i.GetSig()){
     		  for(j=i.GetSig();j!=null;j=j.GetSig()){

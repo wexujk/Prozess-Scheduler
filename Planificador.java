@@ -1,16 +1,20 @@
 public class Planificador{
 	ColaMemoria memoria;
-	ProcesosListos colaProcesoslistos;
+	ProcesosListos colaprocesoslistos;
+	Ordenamientos  or;
 
 	public void Planificador(){
 		memoria = new ColaMemoria();
 		colaProcesoslistos= new ProcesosListos();
+		or= new Ordenamientos();
 
 	}
 
 	public void llenar(Prozess p){
-			colaProcesoslistos.Insertar(p);
+			colaprocesoslistos.Insertar(p);
 	}
 
-	public void
+	public void Spiel(){
+		m
+	}
 }
