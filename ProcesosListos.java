@@ -1,12 +1,8 @@
 class ProcesosListos{
 
     private Nodo H,T;
-    private boolean existe;
-   
-   
-   
     
-    public void InsertaAlFinal(EmpleadoCorto dato){
+    public void Insertar(Prozess dato){
 
             Nodo q= new Nodo(dato,null);
             if(T==  null)
@@ -16,14 +12,6 @@ class ProcesosListos{
                 T=q;
             }
 
-    }
-
-    public void InsertaAlPrincipio(EmpleadoCorto dato){
-
-            Nodo q= new Nodo(dato,H);
-            if(H==null)
-                T=q;
-            H=q;
     }
 
     public void Listar(){
@@ -40,36 +28,17 @@ class ProcesosListos{
             aux.GetInfo().Listar();
         }
     }
-
-    public void InsertaDespues(Nodo anterior, EmpleadoCorto dato){
-        Nodo q;
-        if(anterior== T)
-            InsertaAlFinal(dato);
-        else{
-            q=new Nodo(dato,anterior.GetSig());
-            anterior.SetSig(q);
-        }
-    }
-    public void InsertaAntes(Nodo anterior, EmpleadoCorto dato){
-        Nodo q;
-        if(anterior==null)
-            InsertaAlPrincipio(dato);
-        else
-        {
-            q=new Nodo(dato,anterior.GetSig());
-            anterior.SetSig(q);
-        }
-    }//Buscar se manda a llamar desde el main
-    public void Actualizar(Nodo q){
-       EmpleadoCorto aux;
+    
+    /*public void Actualizar(Nodo q){
+       Prozess aux;
        aux=q.GetInfo();
        aux.Actualizar();
             q.SetInfo(aux);
 
             //q.GetInfo().Actualizar();
     }
-
-    public Nodo Borrar(int clave)
+*/
+    public Nodo Borrar()
     {
         Nodo actual;
         
@@ -80,14 +49,5 @@ class ProcesosListos{
                     H=H.GetSig();//ahora H hace referencia  al nodo siguient
         return actual;
     }
-
-    public boolean GetExiste()
-    {
-        return existe;
-    }
-   
-   public Nodo GetH(){
-   return H;
-   }
 
 }

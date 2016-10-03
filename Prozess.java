@@ -33,7 +33,7 @@ public class Prozess
           return false;
     }
 
-    public void DruckProzess(){
+    public void Listar(){
 
     	System.out.println("Proceso: "+ nomproceso);
     	System.out.println("ID: "+idproceso);
