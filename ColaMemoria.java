@@ -1,45 +1,47 @@
+public class ColaMemoria
+{
+    private Prozess []cola;
+    private int h;
+    private int t;
 
-public class ProcesosListos{
-	private Nodo H;
-	private Nodo T;
+    public ColaMemoria()
+    {
+        cola = new Prozess[100];
+        h=t=-1;
+    }
 
-	public void Insertar(Prozess dato){
-		Nodo q= new Nodo (dato, null);
-		if (T== null)
-                    H=q;
-		else
-                    T.SetSig(q);
-		T=q;
-	}
+    public boolean ValidaEspacio()
+    {
+        return(t<cola.length-1);
+    }
 
-	public void Listar(){
-            Nodo q;
-            for (q= H; q!= null; q=q.GetSig())
-		System.out.println(q.GetInfo().imprimeProzess());
-	}
-        
-        public String getProceso(){
-            Nodo q = H;
-            Prozess proceso = q.GetInfo();
-            H = q.GetSig();
-            q = null;
-            return info;
+    public void Insertar(Prozess dato)
+    {
+        if (h==-1)
+            h++;
+            t++;
+        cola[t]=dato;
+    }
+
+    public Prozess Borrar()
+    {
+        Prozess aux = cola[h];
+        if(h==t)
+            h=t=-1;
+        else h++;
+        return aux;
+    }
+
+    public boolean ValidaVacio()
+    {
+        return(h==-1);
+    }
+
+    /*public void Listar()
+    {
+        for(int i=h;i<=t;i++)
+        {
+            System.out.println(cola[i]);
         }
-        
-        public Nodo getNodoH(){
-            return H;
-        }
-        public Nodo Borrar(){
-            Nodo actual;
-            actual=H; //se guarda  la referencia de H
-
-                if(H==T)//si solo  hay un nodo en la lista
-                    H=T=null;
-                else
-                    H=H.GetSig();
-        return actual;
-
-        }
-
-
+    }*/
 }
