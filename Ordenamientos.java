@@ -10,7 +10,7 @@ class Ordenamientos
     	 Nodo i, j;
     	  for(i=H;i.GetSig()!=null;i=i.GetSig()){
     		  for(j=i.GetSig();j!=null;j=j.GetSig()){
-    			  if(i.GetInfo().GetPrioridad()>j.GetInfo().GetPrioridad())
+    			  if(i.GetInfo().GetPrioridad()<j.GetInfo().GetPrioridad())
     				  IntercambiaDatos(i,j);
     		  }
     	  }
