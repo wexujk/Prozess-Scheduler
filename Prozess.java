@@ -6,8 +6,9 @@ public class Prozess
 	//private  Random  r = new Rsandom();
 	
 
-	public void CapturaDatos()
+	public void CapturaDatos(int np)
 	{
+		System.out.println("------------ PROCESO "+np+" ------------");
 		nomproceso=Teclado.LeeCadena("Ingrese el nombre del proceso : ");
 		idproceso =Teclado.LeeCadena("Ingrese el id del proceso"+nomproceso+" : ");
 		do{

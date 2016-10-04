@@ -1,10 +1,13 @@
 public class Prueba{
 	
 	public static void main(String[] args) {
-		
-		Prozess p1 = new Prozess();
-		p1.CapturaDatos();
-		p1.Listar();
+		int numpros;// numero de procesos
+		Planificador pl =new Planificador();
+
+	   numpros =Teclado.LeeEntero("Ingresa el numero de procesos : ");
+		pl.Llenar(numpros);
+		pl.Run();
+	
       
      
 	}
