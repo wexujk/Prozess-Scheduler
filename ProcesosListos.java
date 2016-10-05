@@ -53,5 +53,8 @@ class ProcesosListos{
     public Nodo GetH(){
         return H;
     }
+    public int GetTamPro(){
+        return H.GetInfo().GetTam();
+    }
 
 }

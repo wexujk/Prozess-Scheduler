@@ -2,6 +2,7 @@ public class Prozess
 {
 	private  String idproceso, nomproceso;
 	private  int tamproceso,zeit_ex_proceso,vorzug, ankommenzeit=0;
+	private int apariciones=0;
 	
 	//private  Random  r = new Rsandom();
 	
@@ -76,11 +77,26 @@ public class Prozess
 	public int GetPrioridad(){
 		return vorzug;
 	}
-
+public void SetRafaga(int tr){
+	zeit_ex_proceso=tr;
+}
 	public int GetRafaga(){
 		return zeit_ex_proceso;
 	}
-
-
-    }
+public void SetTam(int t){
+         tamproceso=t;
+}
+	public int GetTam(){
+		return tamproceso;
+	}
+public String GetNombre(){
+	return nomproceso;
+}
+public int GetApariciones(){
+	return apariciones;
+}
+ public void ActualizAparcion(){
+ 	apariciones++;
+ }
+}
 

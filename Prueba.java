@@ -6,7 +6,7 @@ public class Prueba{
 
 	   numpros =Teclado.LeeEntero("Ingresa el numero de procesos : ");
 		pl.Llenar(numpros);
-		pl.Run();
+		pl.arranca();
 	
       
      

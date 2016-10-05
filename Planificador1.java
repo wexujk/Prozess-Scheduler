@@ -14,10 +14,6 @@ public class Planificador1{
 	public void llenar(Prozess p){
 			colaprocesoslistos.Insertar(p);
 	}
-
-	public void Spiel(){
-		int qRest = 0;
-		int quaResp=0;
 		
 		Prozess proccesTemp = ProcesosListos.Borrar();
 		if( (proccesTemp.getRafaga() ) < quamtun ){
@@ -40,3 +36,16 @@ public class Planificador1{
 		}
 	}
 }
+
+
+
+		do{
+			if (tammemoria>0) {
+			proccesTemp= colaprocesoslistos.Borrar();
+			tammemoria=tammemoria- proccesTemp.GetTamaño();
+			memoria.Insertar(proccesTemp);
+			}
+			else{
+
+				
+			}
