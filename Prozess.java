@@ -13,7 +13,7 @@ public class Prozess
 		nomproceso=Teclado.LeeCadena("Ingrese el nombre del proceso : ");
 		idproceso =Teclado.LeeCadena("Ingrese el id del proceso"+nomproceso+" : ");
 		do{
-			tamproceso=Teclado.LeeEntero("Ingrese el tamaño del proceso "+nomproceso+" : ");
+			tamproceso=Teclado.LeeEntero("Ingrese el tamanio del proceso "+nomproceso+" : ");
 		}while(Valida_Tamproceso());
 		do{
 			zeit_ex_proceso=Teclado.LeeEntero("Ingrese el tiempo de ejecucion: ");
@@ -29,11 +29,11 @@ public class Prozess
 	public boolean Valida_Tamproceso()
 	{
 			if(tamproceso < 0 ){
-            	System.out.println("EL tamaño minimo es 0 MB  =/  ingrese un nuevo  tamaño ");
+            	System.out.println("EL tamanio minimo es 0 MB  =/  ingrese un nuevo  tamanio ");
             			return true;
             		}
             	else	if (tamproceso > 100) {
-            			System.out.println("El tamaño sobrepasa la capacidad maxima de 100 MB ");
+            			System.out.println("El tamanio sobrepasa la capacidad maxima de 100 MB ");
             			System.out.println("Ingrese un  nuevo tamaño ");
             			return true;	
             		}
@@ -67,7 +67,7 @@ public class Prozess
 
     	System.out.println("Proceso: "+ nomproceso);
     	System.out.println("ID: "+idproceso);
-    	System.out.println("Tamaño :"+tamproceso);
+    	System.out.println("Tamanio :"+tamproceso);
     	System.out.println("Tiempo que requiere para  su ejcucion: "+zeit_ex_proceso+" [mseg]");
     	System.out.println("Prioridad: "+ vorzug);
     }

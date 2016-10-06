@@ -21,7 +21,7 @@ public class ColaMemoria
         if (h==-1)
             h++;
             t++;
-        cola[t]=dato;
+        cola[t].SetInfo(dato);
     }
 
     public Prozess Borrar()
@@ -42,7 +42,7 @@ public class ColaMemoria
     {
         for(int i=h;i<=t;i++)
         {
-            cola[i].Listar();
+            cola[i].GetInfo().Listar();
         }
     }
 }
