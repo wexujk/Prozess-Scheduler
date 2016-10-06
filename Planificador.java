@@ -18,25 +18,23 @@ public class Planificador{
 			
 	}
      
-	public void  arranca(){
+     public void Proz1(){
+     	int aux =colaprocesoslistos.GetH().GetInfo().GetTam();
+        while(((tammemoria - aux)> 0) && (colaprocesoslistos.ValidaVacio())){
+     	         proccesTemp=colaprocesoslistos.Borrar().GetInfo();
+                 tammemoria= tammemoria- proccesTemp.GetTam();
+                 memoria.Insertar(proccesTemp);
+             }
 
-		or.Sortieren(colaprocesoslistos.GetH());
-		do{
-			colaprocesoslistos.Listar();
-			int aux =colaprocesoslistos.GetH().GetInfo().GetTam();
-     while((tammemoria - aux)> 0){
-     	proccesTemp=colaprocesoslistos.Borrar().GetInfo();
-     tammemoria= tammemoria- proccesTemp.GetTam();
-     memoria.Insertar(proccesTemp);
-          }
+     }
 
-		
-				proccesTemp = memoria.Borrar();
-			if( (proccesTemp.GetRafaga() ) < quamtun ){
+    public void Proz2(){
+    		proccesTemp = memoria.Borrar();
+			if( (proccesTemp.GetRafaga() ) <= quamtun ){
 			proccesTemp.ActualizAparcion();
 			proccesTemp.SetRafaga(0);
-			System.out.println("Termino el procesos " );
-			proccesTemp.Listar();
+			System.out.printf("Termino el proceso "+proccesTemp.GetNom() );
+			//proccesTemp.ListarL();
 			procesosm.Insertar(proccesTemp);
 			}
 			else{
@@ -44,10 +42,30 @@ public class Planificador{
 			proccesTemp.ActualizAparcion();
 		    proccesTemp.SetRafaga(qrestante);
 		    colaprocesoslistos.Insertar(proccesTemp);
-		    System.out.println("Baja proceso "+proccesTemp.GetNombre()+" de la memoria se libero "+proccesTemp.GetTam()+" unidades de memoria");
-		    tammemoria=tammemoria+proccesTemp.GetTam();
+		    System.out.printf("Baja proceso "+proccesTemp.GetNombre()+" de la memoria se libero "+proccesTemp.GetTam()+" unidades de memoria");
+            tammemoria=tammemoria+proccesTemp.GetTam();
+		    System.out.println(" memoria restante: "+tammemoria);
 		}
 
-			}while(colaprocesoslistos.GetH()!= null);	
-	}
+    }
+	public void  arranca(){
+
+		or.Sortieren(colaprocesoslistos.GetH());
+		System.out.println("------ COMIENZA ROUND ROBIN ------");
+		colaprocesoslistos.Listar();
+	
+		do{
+
+			if (colaprocesoslistos.ValidaVacio()) {
+				Proz1();
+				if (memoria.ValidaVacio()) {
+					Proz2();
+				}
+				
+			}else if (memoria.ValidaVacio()) {
+						Proz2();				
+			}
+				
+	}while(colaprocesoslistos.ValidaVacio() || memoria.ValidaVacio());
+		}
 }

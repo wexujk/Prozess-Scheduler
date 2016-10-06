@@ -71,8 +71,16 @@ public class Prozess
     	System.out.println("Tiempo que requiere para  su ejcucion: "+zeit_ex_proceso+" [mseg]");
     	System.out.println("Prioridad: "+ vorzug);
     }
+    public void ListarL(){
 
-    
+    	System.out.println("Proceso:"+ nomproceso+"  TR= "+zeit_ex_proceso+" [mseg]");
+    }
+
+
+    public String GetNom()
+    {
+    	return nomproceso;
+    }
 
 	public int GetPrioridad(){
 		return vorzug;

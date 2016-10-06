@@ -14,6 +14,13 @@ class ProcesosListos{
 
     }
 
+    public boolean ValidaVacio()
+    {
+        if(H==null)
+            return false;
+        return true;
+    }
+
     public void Listar(){
         Nodo aux=H;
 
@@ -25,7 +32,7 @@ class ProcesosListos{
 
         for(aux=H;aux != null;aux=aux.GetSig())
         {
-            aux.GetInfo().Listar();
+            aux.GetInfo().ListarL();
         }
     }
     
