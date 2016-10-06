@@ -38,11 +38,11 @@ public class ColaMemoria
         return(h==-1);
     }
 
-    /*public void Listar()
+    public void Listar()
     {
         for(int i=h;i<=t;i++)
         {
-            System.out.println(cola[i]);
+            cola[i].Listar();
         }
-    }*/
+    }
 }
