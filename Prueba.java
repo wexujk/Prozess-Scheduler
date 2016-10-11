@@ -12,6 +12,9 @@ public class Prueba{
 	    numpros =Teclado.LeeEntero("Ingresa el numero de procesos : ");
 		pl.Llenar(numpros);
 		pl.arranca();
+		pl.Trespuesta(numpros);
+		pl.Tejec(numpros);
+		pl.Tesper(numpros);
 		//cm.Insertar(p);
         //cm.Listar();
 	

@@ -35,6 +35,7 @@ class ProcesosListos{
             aux.GetInfo().ListarL();
         }
     }
+
     
     /*public void Actualizar(Nodo q){
        Prozess aux;
@@ -63,5 +64,19 @@ class ProcesosListos{
     public int GetTamPro(){
         return H.GetInfo().GetTam();
     }
+    public boolean ValidaId(String id)
+    {
+        Nodo aux=H;
+        while(aux!= null)
+        {
+            if(id.equals(aux.GetInfo().GetID())){
+                System.out.println("El id se repite ingrese uno  diferente");
+                return true;
+            }
+            aux=aux.GetSig();
+        }
 
+        return false;
+
+    }
 }

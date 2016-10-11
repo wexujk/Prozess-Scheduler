@@ -1,8 +1,9 @@
 public class Prozess
 {
 	private  String idproceso, nomproceso;
-	private  int tamproceso,zeit_ex_proceso,vorzug, ankommenzeit=0;
+	private  int tamproceso,zeit_ex_proceso,vorzug;
 	private int apariciones=0;
+	private int ant=0, esp = 0;
 	
 	//private  Random  r = new Rsandom();
 	
@@ -11,7 +12,7 @@ public class Prozess
 	{
 		System.out.println("------------ PROCESO "+np+" ------------");
 		nomproceso=Teclado.LeeCadena("Ingrese el nombre del proceso : ");
-		idproceso =Teclado.LeeCadena("Ingrese el id del proceso"+nomproceso+" : ");
+		
 		do{
 			tamproceso=Teclado.LeeEntero("Ingrese el tamanio del proceso "+nomproceso+" : ");
 		}while(Valida_Tamproceso());
@@ -24,7 +25,7 @@ public class Prozess
 		
 	}
 
-//Métodos de validaciones para  los datos  ingresados ingresados
+//Metodos de validacion para  los datos  ingresados ingresados
 	
 	public boolean Valida_Tamproceso()
 	{
@@ -38,7 +39,7 @@ public class Prozess
             			return true;	
             		}
           return false;
-    }
+    }	
     public boolean ValidaTiempoejecucion()
 	{
 			if(zeit_ex_proceso < 1 ){
@@ -73,7 +74,12 @@ public class Prozess
     }
     public void ListarL(){
 
-    	System.out.println("Proceso:"+ nomproceso+"  TR= "+zeit_ex_proceso+" [mseg]");
+    	System.out.printf("| "+ nomproceso+" |");
+    }
+    public void ListarM(){
+    	System.out.println("    --------");
+    	System.out.println("    | "+ nomproceso+" |");
+    	System.out.println("    --------");
     }
 
 
@@ -81,6 +87,14 @@ public class Prozess
     {
     	return nomproceso;
     }
+     public String GetID(){
+     	return idproceso;
+     }
+    public void SetID(String id)
+    {
+    	idproceso= id;
+    }
+
 
 	public int GetPrioridad(){
 		return vorzug;
@@ -106,5 +120,21 @@ public int GetApariciones(){
  public void ActualizAparcion(){
  	apariciones++;
  }
+	
+public void SetAnt(int desp){
+	ant= desp;
+ }
+			
+public int GetAnt(){
+	return ant;
+ }
+public void Setesp(int desp){
+	esp= desp;
+ }
+			
+public int Getesp(){
+	return esp;
+ }
+
 }
 

@@ -3,7 +3,7 @@ public class ColaMemoria
     private Prozess []cola;
     private int h;
     private int t;
-    private int tam=100;
+    //private int tam=100;
 
     public ColaMemoria()
     {
@@ -42,7 +42,7 @@ public class ColaMemoria
     {
         for(int i=h;i<=t;i++)
         {
-            cola[i].ListarL();
+            cola[i].ListarM();
         }
     }
 }
